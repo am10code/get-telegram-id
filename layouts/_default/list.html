@@ -21,14 +21,37 @@
 
       <hr style="margin: 24px 0;" />
 
+      {{ $startSlugs := slice "print-id-bot" "how-to-find-telegram-id" "get-telegram-user-id" "get-telegram-chat-id" }}
+      {{ $startHerePaths := slice }}
+      {{ range $slug := $startSlugs }}
+        {{ $p := index (where $.Site.RegularPages "File.ContentBaseName" $slug) 0 }}
+        {{ if $p }}{{ $startHerePaths = $startHerePaths | append $p.RelPermalink }}{{ end }}
+      {{ end }}
+
       <section>
-        <h2>Pages</h2>
+        <h2>Start here</h2>
         <ul>
-          {{ range .Pages.ByTitle }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ range $slug := $startSlugs }}
+            {{ $p := index (where $.Site.RegularPages "File.ContentBaseName" $slug) 0 }}
+            {{ if $p }}
+              <li><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></li>
+            {{ end }}
           {{ end }}
         </ul>
       </section>
+
+      {{ $otherPages := where .Site.RegularPages "RelPermalink" "not in" $startHerePaths }}
+      {{ $otherPages = sort $otherPages "Title" }}
+      {{ if $otherPages }}
+        <section style="margin-top: 24px;">
+          <h2>All guides</h2>
+          <ul>
+            {{ range $otherPages }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
     </main>
   </body>
 </html>
