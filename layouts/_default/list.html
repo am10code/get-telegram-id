@@ -10,6 +10,13 @@
     <meta name="description" content="{{ .Site.Params.description }}" />
     <link rel="canonical" href="{{ .Permalink }}" />
 
+    {{ range .AllTranslations }}
+      <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+    {{ end }}
+    {{ $en := index (where .AllTranslations "Lang" "en") 0 }}
+    {{ if not $en }}{{ $en = . }}{{ end }}
+    <link rel="alternate" hreflang="x-default" href="{{ $en.Permalink }}" />
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}" />
     <meta property="og:description" content="{{ .Description | default .Site.Params.description }}" />
@@ -23,6 +30,7 @@
   </head>
   <body>
     <main style="max-width: 820px; margin: 40px auto; font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; padding: 0 16px;">
+      {{ partial "language-switcher.html" .Site.Home }}
       <header>
         <h1>{{ .Site.Title }}</h1>
         <p>{{ .Site.Params.description }}</p>

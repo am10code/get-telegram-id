@@ -1,0 +1,20 @@
+{{ $page := . }}
+{{ $translations := $page.AllTranslations }}
+{{ $homeTranslations := $page.Site.Home.AllTranslations }}
+<p style="font-size: 0.9em; color: #666;">
+  Language:
+  {{ range $i, $lang := $page.Site.Languages }}
+    {{ if $i }} | {{ end }}
+    {{ if eq $lang.Lang $page.Site.Language.Lang }}
+      {{ $lang.LanguageName }}
+    {{ else }}
+      {{ $target := index (where $translations "Lang" $lang.Lang) 0 }}
+      {{ if not $target }}{{ $target = index (where $homeTranslations "Lang" $lang.Lang) 0 }}{{ end }}
+      {{ if $target }}
+        <a href="{{ $target.Permalink }}" style="color: inherit;">{{ $lang.LanguageName }}</a>
+      {{ else }}
+        {{ $lang.LanguageName }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</p>
