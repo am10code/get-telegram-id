@@ -25,6 +25,18 @@
           <p><strong>{{ .text }}</strong></p>
           <p><a href="{{ .url }}">{{ .label }}</a></p>
         {{ end }}
+
+        {{ $related := where (where .Site.RegularPages "Section" .Section) "Permalink" "!=" .Permalink }}
+        {{ $related = sort $related "Title" | first 8 }}
+        {{ if $related }}
+          <hr style="margin: 28px 0;" />
+          <h2>Related pages</h2>
+          <ul>
+            {{ range $related }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
       </article>
     </main>
   </body>
