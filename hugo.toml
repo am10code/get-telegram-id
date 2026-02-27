@@ -4,4 +4,4 @@ title = 'Get Telegram ID'
 
 [params]
 description = 'Find your Telegram ID and chat_id in seconds. Works in private chat and groups.'
-bot_url = 'https://t.me/print_id_bot'
+bot_url = "https://t.me/print_id_bot"
