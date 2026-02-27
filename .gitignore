@@ -4,3 +4,5 @@ resources/
 
 # generated from static/og.svg in CI
 static/og.png
+
+docs/PROJECT-STATE.md
