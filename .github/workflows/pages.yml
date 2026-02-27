@@ -27,6 +27,12 @@ jobs:
           hugo-version: '0.157.0'
           extended: true
 
+      - name: Install librsvg
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+
+      - name: Generate OG image
+        run: rsvg-convert -w 1200 -h 630 static/og.svg -o static/og.png
+
       - name: Build
         run: hugo --minify
 
