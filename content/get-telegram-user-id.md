@@ -21,7 +21,7 @@ In private chat with @print_id_bot, send any message, photo, sticker, or documen
 
 ## Method 3: Forward a message (and limitations)
 
-If you forward a message from another user to @print_id_bot, the bot may show the original sender's User ID. However, if the sender has privacy settings that hide their ID when forwarding, you will see "ID hidden". You cannot reliably get someone else's ID by phone number or username. See [forwarded messages and hidden IDs](/telegram-forwarded-message-id/) for details.
+If you forward a message from another user to @print_id_bot, the bot may show the original sender's User ID. However, if the sender has privacy settings that hide their ID when forwarding, you will see "ID hidden". You cannot reliably get someone else's ID by phone number or username. See [forwarded messages and hidden IDs]({{< relref "telegram-forwarded-message-id.md" >}}) for details.
 
 ## What you cannot do
 
@@ -31,9 +31,9 @@ If you forward a message from another user to @print_id_bot, the bot may show th
 
 ## Related pages
 
-- [Telegram ID vs username: what's the difference?](/telegram-id-vs-username/)
-- [Why Telegram doesn't show your numeric ID](/telegram-id-not-in-ui/)
-- [print_id_bot: commands, languages, features](/print-id-bot/)
+- [Telegram ID vs username: what's the difference?]({{< relref "telegram-id-vs-username.md" >}})
+- [Why Telegram doesn't show your numeric ID]({{< relref "telegram-id-not-in-ui.md" >}})
+- [print_id_bot: commands, languages, features]({{< relref "print-id-bot.md" >}})
 
 ## FAQ
 
@@ -44,7 +44,7 @@ It is not shown in the Telegram UI, but bots and apps can read it when you inter
 No. It is assigned once and does not change.
 
 ### Why does the bot show "ID hidden" for forwarded messages?
-The sender has enabled privacy settings that hide their ID when messages are forwarded. See [forwarded sender ID hidden](/telegram-privacy-forwarded-id-hidden/).
+The sender has enabled privacy settings that hide their ID when messages are forwarded. See [forwarded sender ID hidden]({{< relref "telegram-privacy-forwarded-id-hidden.md" >}}).
 
 ### Is it safe to use @print_id_bot?
 Yes. The bot only displays IDs you already have access to (your own or from chats you're in). It does not store or share your data beyond what Telegram provides.

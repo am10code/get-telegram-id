@@ -43,9 +43,9 @@ All bot responses: welcome text, labels (User ID, Chat ID, Group name), help tex
 
 ## Related pages
 
-- [Using @print_id_bot if you don't speak English](/telegram-id-bot-for-non-english/)
-- [print_id_bot: commands, languages, features](/print-id-bot/)
-- [Get Telegram user ID (safe methods)](/get-telegram-user-id/)
+- [Using @print_id_bot if you don't speak English]({{< relref "telegram-id-bot-for-non-english.md" >}})
+- [print_id_bot: commands, languages, features]({{< relref "print-id-bot.md" >}})
+- [Get Telegram user ID (safe methods)]({{< relref "get-telegram-user-id.md" >}})
 
 ## FAQ
 

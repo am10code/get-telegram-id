@@ -2,6 +2,76 @@ baseURL = "https://am10code.github.io/get-telegram-id/"
 languageCode = 'en-us'
 title = 'Get Telegram ID'
 
+# Allow build when relref targets exist only in default language
+refLinksErrorLevel = "warning"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages.en]
+languageName = "English"
+weight = 1
+
+[languages.ru]
+languageName = "Русский"
+weight = 2
+
+[languages.es]
+languageName = "Español"
+weight = 3
+
+[languages.pt]
+languageName = "Português"
+weight = 4
+
+[languages.tr]
+languageName = "Türkçe"
+weight = 5
+
+[languages.de]
+languageName = "Deutsch"
+weight = 6
+
+[languages.fr]
+languageName = "Français"
+weight = 7
+
+[languages.id]
+languageName = "Bahasa Indonesia"
+weight = 8
+
+[languages.ar]
+languageName = "العربية"
+weight = 9
+
+[languages.fa]
+languageName = "فارسی"
+weight = 10
+
+[languages.uz]
+languageName = "Oʻzbek"
+weight = 11
+
+[languages.hi]
+languageName = "हिन्दी"
+weight = 12
+
+[languages.zh]
+languageName = "中文"
+weight = 13
+
+[languages.ur]
+languageName = "اردو"
+weight = 14
+
+[languages.tl]
+languageName = "Tagalog"
+weight = 15
+
+[languages.am]
+languageName = "አማርኛ"
+weight = 16
+
 [params]
 description = 'Find your Telegram ID and chat_id in seconds. Works in private chat and groups.'
 bot_url = "https://t.me/print_id_bot"
