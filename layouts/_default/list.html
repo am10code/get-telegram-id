@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+  </head>
+  <body>
+    <main style="max-width: 820px; margin: 40px auto; font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; padding: 0 16px;">
+      <header>
+        <h1>{{ .Site.Title }}</h1>
+        <p>{{ .Site.Params.description }}</p>
+        <p>
+          <a href="{{ .Site.Params.bot_url }}">Open Telegram bot</a>
+        </p>
+      </header>
+
+      <hr style="margin: 24px 0;" />
+
+      <section>
+        <h2>Pages</h2>
+        <ul>
+          {{ range .Pages.ByTitle }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

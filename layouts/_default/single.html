@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Description | default .Site.Params.description }}" />
+
+    <link rel="canonical" href="{{ .Permalink }}" />
+  </head>
+  <body>
+    <main style="max-width: 820px; margin: 40px auto; font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; padding: 0 16px;">
+      <header style="margin-bottom: 24px;">
+        <a href="{{ .Site.Home.RelPermalink }}">← Home</a>
+      </header>
+
+      <article>
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+
+        {{ with .Params.cta }}
+          <hr style="margin: 28px 0;" />
+          <p><strong>{{ .text }}</strong></p>
+          <p><a href="{{ .url }}">{{ .label }}</a></p>
+        {{ end }}
+      </article>
+    </main>
+  </body>
+</html>
