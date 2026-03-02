@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="{{ "/favicon.svg" | relURL }}" type="image/svg+xml" />
+    <link rel="icon" href="{{ "favicon.svg" | relURL }}?v={{ .Site.Params.assets_version }}" type="image/svg+xml" />
+    <link rel="icon" href="{{ "favicon.ico" | relURL }}?v={{ .Site.Params.assets_version }}" sizes="any" />
+    <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}?v={{ .Site.Params.assets_version }}" />
     <meta name="google-site-verification" content="IiHF_wIQHntp5qEWqsjCcvpbSu17vCW-TcLb3WU_Wpw" />
     <meta name="msvalidate.01" content="22E354A9797EE921AEEB1A9685EE5569" />
 
